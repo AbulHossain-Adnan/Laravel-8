@@ -32,15 +32,24 @@
   	@method('PUT')
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
+    @error('name')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
     <input type="text" class="form-control" name="name" value="{{$old_data->name}}">
    
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Email</label>
+     @error('email')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
     <input type="email" class="form-control" name="email" id="exampleInputPassword1" value="{{$old_data->email}}">
   </div>
     <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">phone</label>
+     @error('phone')
+    <span class="text-danger">{{$message}}</span>
+    @enderror
     <input type="text" class="form-control" name="phone" id="exampleInputPassword1" value="{{$old_data->phone}}">
   </div>
     <div class="mb-3">
@@ -49,6 +58,7 @@
   </div>
    <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">image</label>
+
     <input type="file" class="form-control" name="image" id="exampleInputPassword1">
   </div>
  
