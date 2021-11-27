@@ -55,7 +55,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        return view('student/edit',[
+            'old_data'=>Student::findOrfail($id)
+        ]);
     }
 
     /**
@@ -67,7 +70,20 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data=Student::findOrfail($id);
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->phone=$request->phone;
+         if($request->hasfile('image')){
+            $uploader_file=$request->file('image');
+            $file_name=time().".".$uploader_file->extension();
+            $uploader_file->move(public_path('student_images/'),$file_name);
+            $data->image=$file_name;
+         }
+         $data->update();
+       
+        return redirect()->route('student.index')->with('message','data updated successful!');
     }
 
     /**
@@ -78,6 +94,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=Student::findOrfail($id);
+        unlink('student_images/'.$data->image);
+        $data->delete();
+        return back()->with('message','data deleted successfully');
     }
 }

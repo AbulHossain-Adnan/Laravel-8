@@ -22,6 +22,13 @@
   <div class="card-header text-dark bg-info">Header</div>
   <div class="card-body">
     <a href="{{route('student.create')}}" class="btn btn-success btn-sm">Add New User+</a>
+    @if(session()->has('message'))
+      <div class="aler alert-success">
+        {{session()->get('message')}}
+      </div>
+    
+    @endif
+
    <table class="table">
   <thead>
     <tr>
@@ -47,9 +54,13 @@
         <img src="{{asset('student_images/'.$value->image)}}" width="100">
       </td>
       <td>
-        <a class="btn btn-primary btn-sm" href="">edit</a>
-        <a class="btn btn-danger btn-sm" href="">delete</a>
-
+        <form method="post" action="{{route('student.destroy',$value->id)}}">
+          @csrf
+          @method('DELETE')
+  
+        <a class="btn btn-primary btn-sm" href="{{route('student.edit',$value->id)}}">edit</a>
+        <button class="btn btn-danger btn-sm" type="submit">delete</button>
+</form>
     </tr>
    @endforeach
   </tbody>
