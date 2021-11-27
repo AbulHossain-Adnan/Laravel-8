@@ -21,8 +21,39 @@
   <div class="card  mb-3">
   <div class="card-header text-dark bg-info">Header</div>
   <div class="card-body">
-    <a href="{{route('student.index')}}" class="btn btn-success btn-sm">Student List</a>
+    <a href="{{route('student.create')}}" class="btn btn-success btn-sm">Add New User+</a>
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
 
+
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($students as $value)
+    <tr>
+      <th scope="row">{{$value->id}}</th>
+      <td>{{$value->name}}</td>
+      <td>{{$value->email}}</td>
+      <td>{{$value->phone}}</td>
+      <td>
+        
+        <img src="{{asset('student_images/'.$value->image)}}" width="100">
+      </td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="">edit</a>
+        <a class="btn btn-danger btn-sm" href="">delete</a>
+
+    </tr>
+   @endforeach
+  </tbody>
+</table>
   </div>
 </div>
   </div>

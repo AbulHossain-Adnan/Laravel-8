@@ -10,7 +10,10 @@ class StudentController extends Controller
     
     public function index()
     {
-        //
+        return view('student.index',[
+            'students'=>Student::OrderBy('id','desc')->get()
+
+        ]);
     }
 
   
