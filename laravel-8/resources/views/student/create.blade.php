@@ -30,19 +30,33 @@
   	@csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
+
+@error('name')
+     <span class="text-danger">{{ $message }}</span>
+@enderror
     <input type="text" class="form-control" name="name" id="" aria-describedby="emailHelp">
    
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Email</label>
+
+@error('email')
+     <span class="text-danger">{{ $message }}</span>
+@enderror
     <input type="email" class="form-control" name="email" id="exampleInputPassword1">
   </div>
     <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">phone</label>
+    @error('phone')
+     <span class="text-danger">{{ $message }}</span>
+@enderror
     <input type="text" class="form-control" name="phone" id="exampleInputPassword1">
   </div>
     <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">image</label>
+    @error('image')
+     <span class="text-danger">{{ $message }}</span>
+@enderror
     <input type="file" class="form-control" name="image" id="exampleInputPassword1">
   </div>
  

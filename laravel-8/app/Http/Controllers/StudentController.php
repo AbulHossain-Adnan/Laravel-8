@@ -25,6 +25,13 @@ class StudentController extends Controller
    
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required',
+            'image' => 'required|mimes:jpg,bmp,png'
+
+        ]);
         $data=new Student();
         $data->name=$request->name;
         $data->email=$request->email;
