@@ -21,6 +21,11 @@
   <div class="card  mb-3">
   <div class="card-header text-dark bg-info text-center">ADD STUDENT</div>
   <div class="card-body">
+  @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
   <form method="post" action="{{route('student.store')}}" enctype="multipart/form-data">
   	@csrf
   <div class="mb-3">

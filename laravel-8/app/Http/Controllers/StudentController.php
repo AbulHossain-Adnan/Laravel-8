@@ -33,16 +33,12 @@ class StudentController extends Controller
             $data->image=$file_name;
          }
          $data->save();
-         echo "success";
+        $request->session()->flash('message', 'data added successful!');
+        return back();
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
