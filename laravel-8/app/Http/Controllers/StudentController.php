@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Auth;
 
 class StudentController extends Controller
 {
@@ -63,8 +64,13 @@ class StudentController extends Controller
     public function edit($id)
     {
        
+       
+       
         return view('student/edit',[
-            'old_data'=>Student::findOrfail($id)
+            
+            'old_data'=>Student::findOrfail($id),
+            session()->put('yes',['name'=>'adnan','age'=>'22'])
+
         ]);
     }
 
@@ -94,6 +100,7 @@ class StudentController extends Controller
             $data->image=$file_name;
          }
          $data->update();
+
        
         return redirect()->route('student.index')->with('message','data updated successful!');
     }
@@ -106,6 +113,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
+        if(session()->has('yes')){
+            session()->forget('yes');
+        }
         $data=Student::findOrfail($id);
         unlink('student_images/'.$data->image);
         $data->delete();

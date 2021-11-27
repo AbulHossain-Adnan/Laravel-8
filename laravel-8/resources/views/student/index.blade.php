@@ -29,6 +29,15 @@
     
     @endif
 
+
+@if(session()->has('yes'))
+<span class="text-danger"> {{session()->get('yes')['name']}} </span>
+@endif
+
+
+
+
+
    <table class="table">
   <thead>
     <tr>
