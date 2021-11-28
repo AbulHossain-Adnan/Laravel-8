@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\StudentSum;
 use App\Models\Student;
+use Carbon\Carbon;
 
 
 class StudentSumController extends Controller
@@ -31,9 +32,9 @@ class StudentSumController extends Controller
         $data->earn_money=$request->earn_money;
         $data->expence=$request->expense;
         $data->date=$request->date;
-        $data->day='date';
-        $data->month='month';
-        $data->year='year';
+        $data->day=Carbon::now();
+        $data->month=Carbon::now()->format('F');
+        $data->year=Carbon::now()->year;;
 
         $data->save();
         return redirect()->route('student_sum.index')->with('message','data stored successfully');
