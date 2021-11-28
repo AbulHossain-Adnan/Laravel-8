@@ -29,4 +29,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // route for student
 Route::resource('student',StudentController::class);
 
+
+
+
 Route::resource('student_sum',StudentSumController::class);
+
+
+// route for sql test
+Route::GET('student_sqljoin',[App\Http\Controllers\StudentSumController::class,'sqljoin']);

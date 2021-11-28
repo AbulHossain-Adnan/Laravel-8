@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\StudentSum;
 use App\Models\Student;
 use Carbon\Carbon;
+use DB;
 
 
 class StudentSumController extends Controller
@@ -68,5 +69,12 @@ class StudentSumController extends Controller
     {
         StudentSum::findOrfail($id)->delete();
         return back()->with('message','data deleted succesfully');
+    }
+    // join query between student and student_sum table
+    public function sqljoin(){
+       $join = DB::table('students')
+                ->join('student_sums','students.id', '=', 'student_sums.student_id' )
+                 ->select('students.*', 'student_sums.earn_money', 'student_sums.expence')->get();
+        return $join;
     }
 }

@@ -23,6 +23,7 @@
   <div class="card-body">
     <a href="{{route('student.index')}}" class="btn btn-success btn-sm">Student List</a>
      <a href="{{route('student_sum.index')}}" class="btn btn-success btn-sm">Sum List</a>
+      <a href="{{url('student_sqljoin')}}" class="btn btn-success btn-sm">student sql</a>
 
   </div>
 </div>
