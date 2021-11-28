@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentSumController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // route for student
 Route::resource('student',StudentController::class);
+
+Route::resource('student_sum',StudentSumController::class);

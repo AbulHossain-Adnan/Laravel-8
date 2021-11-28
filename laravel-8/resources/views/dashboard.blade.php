@@ -22,6 +22,7 @@
   <div class="card-header text-dark bg-info">Header</div>
   <div class="card-body">
     <a href="{{route('student.index')}}" class="btn btn-success btn-sm">Student List</a>
+     <a href="{{route('student_sum.index')}}" class="btn btn-success btn-sm">Sum List</a>
 
   </div>
 </div>

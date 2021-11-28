@@ -44,8 +44,8 @@ class StudentController extends Controller
             $data->image=$file_name;
          }
          $data->save();
-        $request->session()->flash('message', 'data added successful!');
-        return back();
+       
+        return redirect()->route('student.index')->with('message', 'data added successful!');
 
     }
 
