@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\StudentSum;
+use Carbon\Carbon;
+use DB;
 
 
 class HomeController extends Controller
@@ -18,13 +20,10 @@ class HomeController extends Controller
                 'min_earning'=>StudentSum::min('earn_money'),
                 'max_expense'=>StudentSum::max('expence'),
                 'min_expense'=>StudentSum::min('expence'),
-
-
-           
-
-
-
-
+               'today_total_earning' =>DB::table("student_sums")
+    ->select(
+        DB::raw("SUM(CASE WHEN created_at >= NOW() - INTERVAL 1 DAY THEN earn_money ELSE 0 END) weekly_sales"))->get(),
+    
         ]);
     }
 
