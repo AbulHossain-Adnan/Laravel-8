@@ -20,9 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 
 
@@ -35,5 +35,8 @@ Route::resource('student',StudentController::class);
 Route::resource('student_sum',StudentSumController::class);
 
 
-// route for sql test
+// route for join 
 Route::GET('student_sqljoin',[App\Http\Controllers\StudentSumController::class,'sqljoin']);
+Route::GET('student_leftjoin',[App\Http\Controllers\StudentSumController::class,'leftjoin']);
+Route::GET('student_rightjoin',[App\Http\Controllers\StudentSumController::class,'rightjoin']);
+Route::GET('dashboard',[App\Http\Controllers\HomeController::class,'dashboard'])->name('dashboard');

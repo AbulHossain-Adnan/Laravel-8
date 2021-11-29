@@ -74,7 +74,21 @@ class StudentSumController extends Controller
     public function sqljoin(){
        $join = DB::table('students')
                 ->join('student_sums','students.id', '=', 'student_sums.student_id' )
-                 ->select('students.*', 'student_sums.earn_money', 'student_sums.expence')->get();
+                 ->get();
         return $join;
+    }
+    public function leftjoin(){
+       $users = DB::table('students')
+            ->leftjoin('student_sums', 'students.id', '=', 'student_sums.student_id')
+            ->get();
+                return $users;
+    }
+    public function rightjoin(){
+
+         $users =DB::table('students')
+                ->rightjoin('student_sums','students.id', '=', 'student_sums.student_id')->get();
+                return $users;
+
+
     }
 }

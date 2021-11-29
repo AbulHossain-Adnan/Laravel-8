@@ -8,6 +8,8 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Jetstream\Contracts\RemovesTeamMembers;
 use Laravel\Jetstream\Events\TeamMemberRemoved;
 
+.
+
 class RemoveTeamMember implements RemovesTeamMembers
 {
     /**

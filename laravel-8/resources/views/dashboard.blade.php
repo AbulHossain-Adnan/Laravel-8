@@ -23,7 +23,9 @@
   <div class="card-body">
     <a href="{{route('student.index')}}" class="btn btn-success btn-sm">Student List</a>
      <a href="{{route('student_sum.index')}}" class="btn btn-success btn-sm">Sum List</a>
-      <a href="{{url('student_sqljoin')}}" class="btn btn-success btn-sm">student sql</a>
+      <a href="{{url('student_sqljoin')}}" class="btn btn-success btn-sm">student inner join</a>
+      <a href="{{url('student_leftjoin')}}" class="btn btn-success btn-sm">student left join</a>
+      <a href="{{url('student_rightjoin')}}" class="btn btn-success btn-sm">student right join</a>
 
   </div>
 </div>
@@ -32,9 +34,222 @@
 
    
 
+   <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Student: {{$total_student}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Earning:  </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Expense:  </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                             <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Max Earning: </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Employee</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Department</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                             <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Employee</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Employee</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Department</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                             <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Employee</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Employee</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Department</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                             <i class="fas fa-user fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
+    </div>
+
+  
 
 
 
