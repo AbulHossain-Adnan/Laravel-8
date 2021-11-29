@@ -12,8 +12,9 @@ class HomeController extends Controller
     public function dashboard(){
         return view('dashboard',[
             'total_student'=>Student::count(),
+             'total_earning'=>StudentSum::sum('earn_money'),
            
-            
+
 
 
 
