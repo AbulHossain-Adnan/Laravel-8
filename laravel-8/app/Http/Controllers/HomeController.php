@@ -16,6 +16,7 @@ class HomeController extends Controller
               'total_expense'=>StudentSum::sum('expence'),
                 'max_earning'=>StudentSum::max('earn_money'),
                 'min_earning'=>StudentSum::min('earn_money'),
+                'max_expense'=>StudentSum::max('expence'),
 
            
 
