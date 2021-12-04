@@ -40,3 +40,5 @@ Route::GET('student_sqljoin',[App\Http\Controllers\StudentSumController::class,'
 Route::GET('student_leftjoin',[App\Http\Controllers\StudentSumController::class,'leftjoin']);
 Route::GET('student_rightjoin',[App\Http\Controllers\StudentSumController::class,'rightjoin']);
 Route::GET('dashboard',[App\Http\Controllers\HomeController::class,'dashboard'])->name('dashboard');
+
+Route::GET('sorting',[App\Http\Controllers\StudentSumController::class ,'sorting']);

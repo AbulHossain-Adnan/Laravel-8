@@ -91,4 +91,10 @@ class StudentSumController extends Controller
 
 
     }
+    public function sorting(){
+        $tk=100<1000000;
+        
+        $sorting=StudentSum::where('earn_money',  '>', 10000)->where('earn_money', '<=', 500000)->get();
+        return $sorting;
+    }
 }
