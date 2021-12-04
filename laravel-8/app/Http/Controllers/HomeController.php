@@ -26,5 +26,22 @@ class HomeController extends Controller
     
         ]);
     }
+    
+
+
+// Using Sum with a Case condition could help. Not tested but roughly how i would draw it up check if it gets you any further.
+
+// $billings = DB::table("sales")
+//     ->select(
+//         "sales.store",
+//         DB::raw("SUM(CASE WHEN created_at >= NOW() - INTERVAL 1 WEEK THEN amount ELSE 0 END) weekly_sales",
+//         DB::raw("SUM(CASE WHEN created_at >= NOW() - INTERVAL 1 MONTH THEN amount ELSE 0 END) monthly_sales",
+//         DB::raw("SUM(CASE WHEN created_at >= NOW() - INTERVAL 1 YEAR THEN amount ELSE 0 END) yearly_sales",
+//         DB::raw("SUM(amount) total_sales")
+//     )
+//     ->groupBy("sales.store")
+//     ->orderByRaw('sales.store ASC');           
+
+
 
 }
