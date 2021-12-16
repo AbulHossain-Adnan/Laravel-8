@@ -42,3 +42,4 @@ Route::GET('student_rightjoin',[App\Http\Controllers\StudentSumController::class
 Route::GET('dashboard',[App\Http\Controllers\HomeController::class,'dashboard'])->name('dashboard');
 
 Route::GET('sorting',[App\Http\Controllers\StudentSumController::class ,'sorting']);
+Route::GET('test',[App\Http\Controllers\Testcontroller::class ,'test']);

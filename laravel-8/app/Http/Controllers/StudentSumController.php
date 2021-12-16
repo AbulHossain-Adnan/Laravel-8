@@ -11,6 +11,7 @@ use DB;
 
 class StudentSumController extends Controller
 {
+    public $StudentSum;
    
     public function index()
     {
@@ -97,4 +98,11 @@ class StudentSumController extends Controller
         $sorting=StudentSum::where('earn_money',  '>', 10000)->where('earn_money', '<=', 500000)->get();
         return $sorting;
     }
+
+    public function __construct(StudentSum $studentsum){
+        $this->StudentSum=$studentsum;
+
+    }
 }
+$obj=new StudentSumController();
+echo $obj->test();
